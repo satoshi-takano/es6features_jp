@@ -62,7 +62,8 @@ var bob = {
 ```
 
 ### Classes
-ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+Classesは、従来のプロトタイプベースオブジェクト指向パターンの糖衣構文です。
+宣言的にクラスを定義でき、互換性（他の多くのクラスベースOOP言語と...かな?）に拍車をかけます。
 
 ```JavaScript
 class SkinnedMesh extends THREE.Mesh {
