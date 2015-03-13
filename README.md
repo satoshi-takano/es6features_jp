@@ -30,18 +30,21 @@ ES6では以下の新機能が追加されました。
 - [reflect api](#reflect-api)
 - [tail calls](#tail-calls)
 
-## ECMAScript 6 Features
+## ECMAScript 6 の新機能
 
 ### Arrows
-Arrows are a function shorthand using the `=>` syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both expression and statement bodies.  Unlike functions, arrows share the same lexical `this` as their surrounding code.
+`Arrows`は関数定義の簡略シンタックスで、`=>`という記述で定義できます。
+C#言語、Java 8、CoffeeScriptのそれと似たようなものです。
+式と文の両方をサポートしています。従来の`function`との違いとして、`this`をその関数に束縛する、という点が挙げられます。
+
 
 ```JavaScript
-// Expression bodies
+// 式
 var odds = evens.map(v => v + 1);
 var nums = evens.map((v, i) => v + i);
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 
-// Statement bodies
+// 文
 nums.forEach(v => {
   if (v % 5 === 0)
     fives.push(v);
