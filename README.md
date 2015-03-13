@@ -141,7 +141,8 @@ GET`http://foo.org/bar?a=${a}&b=${b}
 ```
 
 ### Destructuring
-Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
+パターンマッチを使ってバインディングができます。`Array`や`Object`をサポート。
+Destructuringはフェイルソフトで、普通のオブジェクトに対してのルックアップ(`foo["bar"]`)と同様に、値が見つからなかった時は`undefined`を示します。
 
 ```JavaScript
 // list matching
