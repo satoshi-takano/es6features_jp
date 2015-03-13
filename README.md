@@ -117,17 +117,18 @@ var obj = {
 ```
 
 ### Template Strings
-Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
+Template stringsは文字列組み立ての糖衣構文です。
+Perl, Python等のそれと類似したものです。文字列を任意に組み立てるためにタグを埋め込むことができ、インジェクション攻撃を回避できたり文字列から高水準のオブジェクトを組み立てられたりします。
 
 ```JavaScript
-// Basic literal string creation
+// 基本的な文字列作成リテラル
 `In JavaScript '\n' is a line-feed.`
 
-// Multiline strings
+// 複数行文字列
 `In JavaScript this is
  not legal.`
 
-// String interpolation
+// 文字列の補完
 var name = "Bob", time = "today";
 `Hello ${name}, how are you ${time}?`
 
