@@ -91,21 +91,27 @@ class SkinnedMesh extends THREE.Mesh {
 }
 ```
 
-### Enhanced Object Literals
-Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
+### Object リテラルの改良
+- コンストラクションでプロトタイプ設定
+- プロパティへの値の割り当てが短く書ける
+- メソッド定義も短く書ける
+- 親（`super`）の呼び出しができる
+- プロパティ名を動的に作れる
+
+これらはClass定義と同様にオブジェクト指向設計の利点をもたらします。
 
 ```JavaScript
 var obj = {
     // __proto__
     __proto__: theProtoObj,
-    // Shorthand for ‘handler: handler’
+    // ‘handler: handler’ はこう書ける
     handler,
-    // Methods
+    // メソッド
     toString() {
-     // Super calls
+     // Super 呼び出し
      return "d " + super.toString();
     },
-    // Computed (dynamic) property names
+    // プロパティ名を動的に組み立てる
     [ 'prop_' + (() => 42)() ]: 42
 };
 ```
