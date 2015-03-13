@@ -1,11 +1,13 @@
 # ECMAScript 6 <sup>[git.io/es6features](http://git.io/es6features)</sup>
 
-## Introduction
-ECMAScript 6 is the upcoming version of the ECMAScript standard.  This standard is targeting ratification in June 2015.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is [underway now](http://kangax.github.io/es5-compat-table/es6/).
+## まえがき
+ECMAScript 6(以下ES6)は近々公開される新しいバージョンのECMAScript標準です。
+2015年6月の承認を目標としています。ES6は、2009年に行われたES5の標準化以来初めての重要な言語仕様アップデートです。
+ES6で取り込まれる機能は[各ブラウザで実装中](http://kangax.github.io/es5-compat-table/es6/)です。
 
-See the [draft ES6 standard](https://people.mozilla.org/~jorendorff/es6-draft.html) for full specification of the ECMAScript 6 language.
+ES6の完全な言語仕様は[こちら](https://people.mozilla.org/~jorendorff/es6-draft.html)を参照してください。
 
-ES6 includes the following new features:
+ES6では以下の新機能が追加されました。
 - [arrows](#arrows)
 - [classes](#classes)
 - [enhanced object literals](#enhanced-object-literals)
