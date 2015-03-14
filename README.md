@@ -413,10 +413,10 @@ ws.add({ data: 42 });
 ```
 
 ### Proxies
-Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.
+Proxiesは提供されたオブジェクトの持つ全ての挙動を保ったまま、メソッド呼び出しをフックしたり、オブジェクトを可視化したり、ロギングやプロファイリング等に活用できます。
 
 ```JavaScript
-// Proxying a normal object
+// 普通のオブジェクトをプロキシする
 var target = {};
 var handler = {
   get: function (receiver, name) {
@@ -429,7 +429,7 @@ p.world === 'Hello, world!';
 ```
 
 ```JavaScript
-// Proxying a function object
+// 関数オブジェクトをプロキシする
 var target = function () { return 'I am the target'; };
 var handler = {
   apply: function (receiver, ...args) {
