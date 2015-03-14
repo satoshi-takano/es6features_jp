@@ -198,7 +198,7 @@ f(...[1,2,3]) == 6
 ```
 
 ### Let + Const
-`let`を使うとブロックスコープの変数を宣言できます。新種の`var`みたいなものです。
+`let`を使うとブロックスコープの変数を宣言できます。新種の`var`みたいなものです。  
 `const`は定数を宣言できます。一度値を代入したら再び新しい値を代入することはできません。
 
 ```JavaScript
@@ -218,7 +218,9 @@ function f() {
 ```
 
 ### Iterators + For..Of
-Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize `for..in` to custom iterator-based iteration with `for..of`.  Don’t require realizing an array, enabling lazy design patterns like LINQ.
+Iteratorオブジェクトは、CLRのIEnumerableやJavaのIterableのような、独自のイテレーションを実装できます。  
+カスタムイテレータは`for..of`でイテレーションします。
+配列で実現する必要はなく、LINQに似た遅延実行パターンを可能にします。
 
 ```JavaScript
 let fibonacci = {
@@ -234,14 +236,14 @@ let fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // 1000までにしとく
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Iterationは以下のインターフェースに基づいています。(説明のため[TypeScript](http://typescriptlang.org)のシンタックスを使用):
 ```TypeScript
 interface IteratorResult {
   done: boolean;
