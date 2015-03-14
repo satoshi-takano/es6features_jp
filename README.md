@@ -358,22 +358,22 @@ alert("2π = " + exp(pi, e));
 ```
 
 ### Module Loaders
-Module loaders support:
-- Dynamic loading
-- State isolation
-- Global namespace isolation
+モジュールローダーは以下をサポートします。
+- 動的読み込み
+- 状態の隔離
+- グローバル名前空間の隔離
 - Compilation hooks
 - Nested virtualization
 
-The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
+デフォルトのモジュールローダーを設定することができ、また分離されたコンテキストに閉じてコードを読み込み、実行するために新しいローダーを構成することもできます。
 
 ```JavaScript
-// Dynamic loading – ‘System’ is default loader
+// 動的読み込み（`System`はデフォルトローダー）
 System.import('lib/math').then(function(m) {
   alert("2π = " + m.sum(m.pi, m.pi));
 });
 
-// Create execution sandboxes – new Loaders
+// 新しいローダー作成によるサンドボックス化
 var loader = new Loader({
   global: fixup(window) // replace ‘console.log’
 });
