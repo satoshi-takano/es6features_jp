@@ -319,7 +319,9 @@ for(var c of "𠮷") {
 ```
 
 ### Modules
-Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.
+言語レベルでのコンポーネント定義サポートで、AMD,CommonJSなどのポピュラーなJavaScriptモジュールローダーを体系化したものです。  
+ランタイムでの挙動はホストで定義されたデフォルトローダに従います。  
+暗黙的な非同期モデルを採用しており、要求されたモジュールが有効になるまでコードは実行されません。
 
 ```JavaScript
 // lib/math.js
@@ -339,7 +341,7 @@ import {sum, pi} from "lib/math";
 alert("2π = " + sum(pi, pi));
 ```
 
-Some additional features include `export default` and `export *`:
+ほかに、`export default`と`export *`という機能を含んでいます。
 
 ```JavaScript
 // lib/mathplusplus.js
