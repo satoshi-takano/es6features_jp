@@ -141,32 +141,32 @@ GET`http://foo.org/bar?a=${a}&b=${b}
 ```
 
 ### Destructuring
-パターンマッチを使ってバインディングができます。`Array`や`Object`をサポート。
+パターンマッチを使った代入ができます。`Array`や`Object`をサポート。
 Destructuringはフェイルソフトで、普通のオブジェクトに対してのルックアップ(`foo["bar"]`)と同様に、値が見つからなかった時は`undefined`を示します。
 
 ```JavaScript
-// list matching
+// 配列
 var [a, , b] = [1,2,3];
 
-// object matching
+// オブジェクト
 var { op: a, lhs: { op: b }, rhs: c }
        = getASTNode()
 
-// object matching shorthand
+// オブジェクトでの簡略表記
 // binds `op`, `lhs` and `rhs` in scope
 var {op, lhs, rhs} = getASTNode()
 
-// Can be used in parameter position
+// 引数でも同様のことができます
 function g({name: x}) {
   console.log(x);
 }
 g({name: 5})
 
-// Fail-soft destructuring
+// フェイルソフトなので、値が見つからない時は`undefined`になります
 var [a] = [];
 a === undefined;
 
-// Fail-soft destructuring with defaults
+// デフォルト値を指定することができます
 var [a = 1] = [];
 a === 1;
 ```
