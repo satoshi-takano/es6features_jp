@@ -441,7 +441,7 @@ var p = new Proxy(target, handler);
 p() === 'I am the proxy';
 ```
 
-There are traps available for all of the runtime-level meta-operations:
+ランタイムレベルのメタ操作全てに対して有効なトラップがあります。
 
 ```JavaScript
 var handler =
@@ -464,7 +464,10 @@ var handler =
 ```
 
 ### Symbols
-Symbols enable access control for object state.  Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`.  Symbols are a new primitive type. Optional `name` parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
+Symbolsは新しく導入されたプリミティブ型で、オブジェクト状態のアクセス制御を可能にします。  
+文字列、シンボルのどちらでもプロパティのキーとして利用できます。  
+任意で指定できる`name`パラメータはデバッグで利用されます。（Symbolを同定するものではない）  
+Symbolsはユニークですが、`Object.getOwnPropertySymbols`のようなリフレクションの機能を使った場合にはプライベートになりません。
 
 
 ```JavaScript
