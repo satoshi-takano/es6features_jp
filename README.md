@@ -172,18 +172,19 @@ a === 1;
 ```
 
 ### Default + Rest + Spread
-Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for `arguments` and addresses common cases more directly.
-
+引数のデフォルト値を指定できます。
 ```JavaScript
 function f(x, y=12) {
-  // y is 12 if not passed (or passed as undefined)
+  // 第二引数が渡されなかったとき（または`undefined`が渡された時）`y`の値は12になります
   return x + y;
 }
 f(3) == 15
 ```
+関数呼び出しの際の末尾に複数の実引数を渡した時に、それを配列として受け取れます。  
+Restは、従来利用していた`arguments`を置き換えるものです。
 ```JavaScript
 function f(x, ...y) {
-  // y is an Array
+  // `y`は配列
   return x * y.length;
 }
 f(3, "hello", true) == 6
@@ -192,25 +193,25 @@ f(3, "hello", true) == 6
 function f(x, y, z) {
   return x + y + z;
 }
-// Pass each elem of array as argument
+// 配列を個別の引数として展開して渡すこともできます
 f(...[1,2,3]) == 6
 ```
 
 ### Let + Const
-Block-scoped binding constructs.  `let` is the new `var`.  `const` is single-assignment.  Static restrictions prevent use before assignment.
-
+`let`を使うとブロックスコープの変数を宣言できます。新種の`var`みたいなものです。
+`const`は定数を宣言できます。一度値を代入したら再び新しい値を代入することはできません。
 
 ```JavaScript
 function f() {
   {
     let x;
     {
-      // okay, block scoped name
+      // xはブロックスコープに束縛されています
       const x = "sneaky";
-      // error, const
+      // 定数に値を再代入することはできないため、これはエラーになります
       x = "foo";
     }
-    // error, already declared in block
+    // これもエラー。このスコープで`x`は既に宣言されている
     let x = "inner";
   }
 }
