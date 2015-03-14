@@ -295,7 +295,9 @@ interface Generator extends Iterator {
 ```
 
 ### Unicode
-Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.
+完全なUnicodeサポートのための互換性を保った変更。
+文字列中で使えるUnicodeリテラルと、正規表現の`u`モード、および文字列処理のための新しいAPIを含みます。
+これらの追加はJavaScriptで動くグローバルなアプリをサポートします。
 
 ```JavaScript
 // same as ES5.1
