@@ -258,9 +258,11 @@ interface Iterable {
 ```
 
 ### Generators
-Generators simplify iterator-authoring using `function*` and `yield`.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  `next` and `throw`.  These enable values to flow back into the generator, so `yield` is an expression form which returns a value (or throws).
+Generatorsは`function*`、`yield`を使って、反復処理の記述を容易にします。  
+`function*`で宣言された関数はGeneratorインスタンスを返します。Generatorsは`next`、`throw`を備えたイテレータのサブタイプです。  
+ These enable values to flow back into the generator, so `yield` is an expression form which returns a value (or throws).
 
-Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
+Note: `await`風な非同期プログラミングにも使えます。`await`についてはES7のプロポーザルを参照してください。
 
 ```JavaScript
 var fibonacci = {
@@ -276,14 +278,14 @@ var fibonacci = {
 }
 
 for (var n of fibonacci) {
-  // truncate the sequence at 1000
+  // 1000までにしとく
   if (n > 1000)
     break;
   console.log(n);
 }
 ```
 
-The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+Generatorのインターフェースは以下
 
 ```TypeScript
 interface Generator extends Iterator {
